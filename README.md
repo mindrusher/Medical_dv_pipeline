@@ -87,7 +87,7 @@ flowchart TD
 
 Клонирование проекта
 ```
-github
+https://github.com/mindrusher/Medical_dv_pipeline.git
 ```
 
 ```
