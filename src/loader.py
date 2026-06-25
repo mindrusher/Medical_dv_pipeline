@@ -244,7 +244,6 @@ def run_pipeline() -> None:
         conn
     )
 
-
     running_load = get_running_load(
         conn,
         version
@@ -258,31 +257,21 @@ def run_pipeline() -> None:
         f"Running load: {running_load}"
     )
 
-
     if last_version == version and not running_load:
-
-
         logger.info(
             "Version already loaded. Skip."
         )
-
-
         conn.close()
 
         return
 
     if running_load:
-
         load_id = running_load[0]
-
         page = running_load[1] + 1
-
         logger.info(
             f"Continue load {load_id} from page {page}"
         )
-
     else:
-
         load_id = create_load(
             conn,
             version
